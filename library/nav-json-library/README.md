@@ -12,8 +12,8 @@
    nav-json-library/
    ├── index.html
    ├── navData.json
-   ├── nav.js
-   └── styles.css
+   ├── nav-json-library.js
+   └── nav-json-library.css
    ```
 
 2. **JSONデータの作成**
@@ -197,7 +197,7 @@
    <head>
      <meta charset="UTF-8">
      <title>ナビゲーションメニューの例</title>
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="nav-json-library.css">
    </head>
    <body>
      <header>
@@ -207,7 +207,7 @@
      </header>
 
      <!-- JavaScriptライブラリを読み込む -->
-     <script src="nav.js"></script>
+     <script src="nav-json-library.js"></script>
      <script>
        // ページの読み込み後にナビゲーションを初期化
        document.addEventListener('DOMContentLoaded', () => {
