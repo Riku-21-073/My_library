@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム画像ライトボックス</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- リンクで囲まれた画像（alt属性あり） -->
+    <div class="image-container">
+        <a href="https://picsum.photos/1200/800">
+            <img src="https://picsum.photos/300/200" alt="画像1の説明">
+        </a>
+    </div>
+    <p class="description">画像1の説明</p>
+
+    <!-- リンクで囲まれていない画像 -->
+    <div class="image-container">
+        <img src="https://picsum.photos/300/200?random=1" alt="画像2の説明">
+    </div>
+    <p class="description">画像2の説明</p>
+
+    <!-- リンクで囲まれた画像（alt属性なし） -->
+    <div class="image-container">
+        <a href="https://picsum.photos/1200/800">
+            <img src="https://picsum.photos/300/200?random=2">
+        </a>
+    </div>
+    <p class="description">画像3の説明</p>
+
+    <!-- さらにランダムな画像 -->
+    <div class="image-container">
+        <img src="https://picsum.photos/300/200?random=3" alt="画像4の説明">
+    </div>
+    <p class="description">画像4の説明</p>
+
+    <!-- 必要に応じて画像を追加 -->
+
+    <script src="script.js"></script>
+</body>
+</html>
