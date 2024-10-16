@@ -1,0 +1,35 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ナビゲーションメニューの例</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-container">
+      <!-- ナビゲーションメニューがここに挿入されます -->
+    </div>
+  </header>
+
+  <!-- JavaScriptライブラリを読み込む -->
+  <script src="nav.js"></script>
+  <script>
+    // ページの読み込み後にナビゲーションを初期化
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = new NavBuilder('navData.json', {
+        targetSelector: '#navbar-container',
+        navClass: 'main-nav',
+        menuClass: 'menu',
+        menuItemClass: 'menu-item',
+        submenuClass: 'submenu',
+        hamburgerClass: 'hamburger',
+        activeClass: 'active'
+      });
+      nav.init();
+    });
+  </script>
+</body>
+</html>

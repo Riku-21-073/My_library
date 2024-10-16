@@ -1,0 +1,31 @@
+{
+    "menu": [
+      {
+        "title": "ホーム",
+        "url": "/"
+      },
+      {
+        "title": "会社概要",
+        "url": "/about"
+      },
+      {
+        "title": "サービス",
+        "url": "/services",
+        "submenu": [
+          {
+            "title": "ウェブ開発",
+            "url": "/services/web-development"
+          },
+          {
+            "title": "モバイルアプリ",
+            "url": "/services/mobile-app"
+          }
+        ]
+      },
+      {
+        "title": "お問い合わせ",
+        "url": "/contact"
+      }
+    ]
+  }
+  

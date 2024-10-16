@@ -1,0 +1,115 @@
+/* styles.css */
+
+/* ヘッダー全体のスタイル */
+header {
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  /* ナビゲーションコンテナ */
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* メニューリストのスタイル */
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  /* メニュー項目のスタイル */
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-item a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu-item a:hover {
+    background-color: #555;
+  }
+  
+  /* サブメニューのスタイル */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 160px;
+    z-index: 1000;
+  }
+  
+  .submenu .menu-item a {
+    padding: 10px 20px;
+  }
+  
+  .menu-item:hover .submenu {
+    display: block;
+  }
+  
+  /* ハンバーガーメニューのスタイル */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* レスポンシブデザイン対応 */
+  @media (max-width: 768px) {
+    /* ナビゲーションを縦に並べる */
+    .main-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      display: none; /* 初期は非表示 */
+      width: 100%;
+    }
+  
+    /* メニューをブロック表示に */
+    .menu {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    /* メニュー項目の幅を100%に */
+    .menu-item a {
+      width: 100%;
+      padding: 10px 15px;
+      border-top: 1px solid #555;
+    }
+  
+    /* サブメニューのスタイル調整 */
+    .submenu {
+      position: static;
+      background-color: #555;
+    }
+  
+    .submenu .menu-item a {
+      padding-left: 30px;
+    }
+  
+    /* ハンバーガーメニューの表示 */
+    .hamburger {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    /* ナビゲーションがアクティブな場合の表示 */
+    .main-nav.active {
+      display: flex;
+    }
+  }
+  
