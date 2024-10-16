@@ -1,0 +1,106 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>コンテンツ一覧表示 - カード形式とハイライト機能</title>
+    <!-- カスタムライブラリのCSS -->
+    <link rel="stylesheet" href="contentList.css">
+    <style>
+        /* ページ全体の背景色を設定（オプション） */
+        body {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- コンテンツリストを表示するコンテナ -->
+    <div id="myContentList"></div>
+
+    <!-- カスタムライブラリのJS -->
+    <script src="contentList.js"></script>
+    <script>
+        // コンテンツデータ
+        const contents = [
+            {
+                title: "旅行のおすすめスポット",
+                author: "旅行好きな学生",
+                created: "2024/10/4 15:57:39",
+                updated: "2024/10/4 15:59:57",
+                comments: 1
+            },
+            {
+                title: "おすすめの料理レシピ",
+                author: "料理好きな主婦",
+                created: "2024/10/5 10:20:15",
+                updated: "2024/10/5 12:45:30",
+                comments: 3
+            },
+            {
+                title: "最新のガジェットレビュー",
+                author: "テクノロジー愛好家",
+                created: "2024/10/6 09:15:22",
+                updated: "2024/10/6 10:30:45",
+                comments: 5
+            },
+            {
+                title: "健康的なライフスタイルの秘訣",
+                author: "フィットネスインストラクター",
+                created: "2024/10/7 08:30:10",
+                updated: "2024/10/7 09:45:50",
+                comments: 2
+            },
+            {
+                title: "自宅でできるエクササイズ",
+                author: "ヨガ愛好者",
+                created: "2024/10/8 11:25:00",
+                updated: "2024/10/8 12:30:25",
+                comments: 4
+            },
+            {
+                title: "写真撮影の基本テクニック",
+                author: "プロカメラマン",
+                created: "2024/10/9 14:10:05",
+                updated: "2024/10/9 15:20:15",
+                comments: 6
+            },
+            {
+                title: "プログラミング入門ガイド",
+                author: "ソフトウェアエンジニア",
+                created: "2024/10/10 16:45:30",
+                updated: "2024/10/10 17:55:45",
+                comments: 7
+            },
+            // さらにコンテンツを追加
+        ];
+
+        // ライブラリの初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            const myContentList = new ContentList({
+                container: '#myContentList',    // ライブラリを適用するコンテナのセレクタ
+                data: contents,                 // コンテンツデータの配列
+                searchPlaceholder: 'タイトルまたは作成者で検索...', // 検索ボックスのプレースホルダー
+                sortOptions: [                  // ソートオプション
+                    { value: '', text: 'ソートを選択' },
+                    { value: 'created_asc', text: '作成日時 昇順' },
+                    { value: 'created_desc', text: '作成日時 降順' },
+                    { value: 'comments_asc', text: 'コメント数 昇順' },
+                    { value: 'comments_desc', text: 'コメント数 降順' },
+                ],
+                itemsPerPage: 6, // 1ページあたりのアイテム数
+                template: function(item) {
+                    // カスタムテンプレートの例（カード形式）
+                    return `
+                        <h2 class="title">${item.title}</h2>
+                        <p class="author">${item.author}</p>
+                        <p class="content-meta">作成日時: ${item.created}</p>
+                        <p class="content-meta">更新日時: ${item.updated}</p>
+                        <p class="content-meta">コメント数: ${item.comments}</p>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
